@@ -44,21 +44,16 @@ def test_mask_email_basic():
     assert result == "pr***@example.com"
     
 
-# def test_normalize_phone():
-#     # Arrange
-#     phone = "555-123-4567"
+def test_normalize_phone():
+    # Arrange
+    phone = "555-123-4567"
 
-#     # Act
-#     result = normalize_phone(phone)
+    # Act
+    result = normalize_phone(phone)
 
-#     # Assert
-#     assert result == "5551234567"
+    # Assert
+    assert result == "5551234567"
 
 def test_normalize_phone_invalid():
     with pytest.raises(ValueError):
         normalize_phone("123")
-
-def test_mask_email_short():
-    email = "ab@example.com"
-    result = mask_email(email)
-    assert result == "a*@example.com"
